@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home work</title>
-   <link rel="stylesheet" href="./css/home-work.css">
-  </head>
-  <body>
-    <form id="search-form">
-      <input type="text" name="searchQuery" placeholder="Search images..." required />
-      <button type="submit">Search</button>
-    </form>
-    
-    <div class="gallery"></div>
-    
-    <button id="load-more" class="hidden">Load more</button>
-    <div id="loader" class="hidden">Loading...</div>
 
-    
-    <script type="module" src="./main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home work</title>
+  <link rel="stylesheet" href="./css/home-work.css" />
+</head>
+
+<body>
+  <form id="search-form" class="search-form">
+    <input type="text" name="searchQuery" placeholder="Search images..." required />
+    <button type="submit">Search</button>
+  </form>
+
+  <div class="gallery"></div>
+
+  <button id="load-more" class="load-more hidden">Load more</button>
+  <div id="loader" class="hidden">Loading...</div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+
 </html>
