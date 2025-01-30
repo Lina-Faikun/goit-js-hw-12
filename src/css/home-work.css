@@ -99,6 +99,8 @@ body {
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+    display: none;
+        
 }
 
 #load-more:hover {
@@ -109,9 +111,10 @@ body {
     display: none;
 }
 
-/* Лоадер */
+
 #loader {
     font-size: 18px;
     color: #4caf50;
     margin: 20px auto;
+    display: none;
 }
