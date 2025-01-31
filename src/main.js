@@ -10,14 +10,10 @@ const loader = document.querySelector("#loader");
 let currentPage = 1;
 let searchQuery = "";
 const PER_PAGE = 15;
-const MAX_PAGES = 2; 
-
 
 function toggleLoadMore(totalHits) {
-  
-  const totalPages = Math.min(Math.ceil(totalHits / PER_PAGE), MAX_PAGES);
-  
-  
+  const totalPages = Math.ceil(totalHits / PER_PAGE); // Розраховуємо кількість сторінок динамічно
+
   if (currentPage >= totalPages) {
     loadMoreBtn.style.display = "none";
     iziToast.info({
@@ -29,7 +25,6 @@ function toggleLoadMore(totalHits) {
     loadMoreBtn.style.display = "block";
   }
 }
-
 
 searchForm.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -67,16 +62,14 @@ searchForm.addEventListener("submit", async (event) => {
   }
 });
 
-
 loadMoreBtn.addEventListener("click", async () => {
   currentPage += 1;
   loader.style.display = "block";
 
   try {
     const data = await fetchImages(searchQuery, currentPage);
-    renderImages(data.hits, false); 
+    renderImages(data.hits, false);
 
-    
     const cardHeight = document.querySelector(".gallery a").getBoundingClientRect().height;
     window.scrollBy({
       top: cardHeight * 2,
